@@ -55,6 +55,11 @@ export const RULES: Rule[] = [
   { markup: '.html.erb', code: ['.rb'] },
 ];
 
+const VIEW_MODEL_RULES = [
+  { view: '.xaml', viewModel: 'ViewModel.cs' },
+  { view: '.axaml', viewModel: 'ViewModel.cs' },
+];
+
 type Direction = 'code' | 'markup';
 
 export function findCounterparts(filePath: string, direction: Direction): string[] {
@@ -91,6 +96,23 @@ export function findCounterparts(filePath: string, direction: Direction): string
       }
     }
   }
+
+  for (const rule of VIEW_MODEL_RULES) {
+    const from = direction === 'code' ? rule.view : rule.viewModel;
+    if (!lower.endsWith(from.toLowerCase())) {
+      continue;
+    }
+    const stem = filePath.slice(0, filePath.length - from.length);
+    if (!stem || stem.endsWith('\\') || stem.endsWith('/')) {
+      continue;
+    }
+    const candidate = stem + (direction === 'code' ? rule.viewModel : rule.view);
+    if (!seen.has(candidate) && candidate.toLowerCase() !== lower) {
+      seen.add(candidate);
+      results.push(candidate);
+    }
+  }
+
   return results;
 }
 

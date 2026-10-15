@@ -2,8 +2,8 @@
   "name": "code-behind-switcher",
   "displayName": "Code-Behind Switcher",
   "publisher": "ShivanshKothari",
-  "description": "Switch between markup and code-behind files (.aspx/.aspx.cs, .xaml/.xaml.cs, .razor/.razor.cs, Angular, C/C++ headers and more) with F7 / Shift+F7. Forked from ncthanh088/view-code-behind",
-  "version": "1.1.0",
+  "description": "Switch between markup, code-behind, and ViewModel files (.aspx/.aspx.cs, .xaml/.xaml.cs, .xaml/*ViewModel.cs, .razor/.razor.cs, Angular, C/C++ headers and more) with F7 / Shift+F7. Forked from ncthanh088/view-code-behind",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/ShivanshKothari/code-behind-switcher"

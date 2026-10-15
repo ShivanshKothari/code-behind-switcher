@@ -1,6 +1,6 @@
 # Code-Behind Switcher
 
-Jump between a markup/design file and its code-behind (or related) file.
+Jump between a markup/design file and its code-behind, ViewModel, or other related file.
 
 ## Mention
 - Forked from ncthanh088/view-code-behind
@@ -10,7 +10,7 @@ Jump between a markup/design file and its code-behind (or related) file.
 - `Shift+F7`: go to the markup file
 - Or right-click in the editor and choose **View Code** / **View Markup** (shown only when a counterpart applies).
 
-If several related files exist (e.g. `.razor.cs` and `.razor.css`), you pick one from a list.
+If several related files exist (e.g. a XAML view with both a code-behind and a ViewModel, or `.razor.cs` and `.razor.css`), you pick one from a list.
 
 ## Supported file pairs
 | Markup | Code |
@@ -18,6 +18,7 @@ If several related files exist (e.g. `.razor.cs` and `.razor.css`), you pick one
 | `.aspx` `.ascx` `.master` `.asmx` `.ashx` `.asax` `.svc` | same + `.cs` / `.vb` |
 | `.xaml` (WPF, UWP, WinUI, MAUI, Xamarin) | `.xaml.cs` / `.xaml.vb` / `.xaml.fs` |
 | `.axaml` (Avalonia) | `.axaml.cs` / `.axaml.vb` |
+| `.xaml` / `.axaml` | `<ViewName>ViewModel.cs` (e.g. `MainPage.xaml` ↔ `MainPageViewModel.cs`) |
 | `.cshtml` / `.vbhtml` | `.cshtml.cs` / `.vbhtml.vb` |
 | `.razor` | `.razor.cs` / `.razor.css` / `.razor.scss` / `.razor.js` |
 | `.Designer.cs` / `.Designer.vb` (WinForms) | `.cs` / `.vb` |
